@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.swets.mytestdatabaseapplication.MainActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relative_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <RelativeLayout
+            android:id="@+id/relative_fields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:ems="5"
+                android:hint="Enter Id"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/buttonSaveToDB"
+                android:layout_alignLeft="@+id/editId"
+                android:layout_alignRight="@+id/buttonSaveToDB"
+                android:layout_alignStart="@+id/editId"
+                android:layout_below="@+id/editId"
+                android:layout_marginTop="25dp"
+                android:hint="Enter name" />
+
+            <EditText
+                android:id="@+id/editAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/buttonGetFromDB"
+                android:layout_alignLeft="@+id/editName"
+                android:layout_alignStart="@+id/editName"
+                android:layout_toLeftOf="@+id/buttonGetFromDB"
+                android:layout_toStartOf="@+id/buttonGetFromDB"
+                android:hint="Enter address" />
+
+            <Button
+                android:id="@+id/buttonSaveToDB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/button_updateDB"
+                android:layout_toLeftOf="@+id/button_updateDB"
+                android:layout_toStartOf="@+id/button_updateDB"
+                android:text="Save to DB" />
+
+            <Button
+                android:id="@+id/buttonGetFromDB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/editName"
+                android:text="Retrive From DB" />
+
+            <Button
+                android:id="@+id/button_updateDB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/button_delete_row"
+                android:layout_alignLeft="@+id/button_delete_row"
+                android:layout_alignStart="@+id/button_delete_row"
+                android:text="Update DB" />
+
+            <Button
+                android:id="@+id/button_delete_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/editName"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="Delete row" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/relative_fields" />
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
